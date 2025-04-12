@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding">
+  <meta name="keywords" content="HippoMM, Multimodal Memory, Long Video Understanding, Hippocampus">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#abstract">Abstract</a>
+        <a class="navbar-item" href="#method">Method</a>
+        <a class="navbar-item" href="#benchmark">Benchmark</a>
+        <a class="navbar-item" href="#results">Results</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding</h1>
+      
+
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/YOUR_ARXIV_ID" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="PATH_TO_YOUR_PAPER.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="YOUR_GITHUB_REPO_LINK" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://anonymous.4open.science/r/HippoVlog-F12F/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="#ffffff" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Comprehending extended audiovisual experiences remains a fundamental challenge for computational systems. Current approaches struggle with temporal integration and cross-modal associations that humans accomplish effortlessly through hippocampal-cortical networks. We introduce <b>HippoMM</b>, a biologically-inspired architecture that transforms hippocampal mechanisms into computational advantages for multimodal understanding. HippoMM implements three key innovations: (i) hippocampus-inspired pattern separation and completion specifically engineered for continuous audiovisual streams, (ii) explicit short-to-long term memory consolidation that transforms perceptual details into semantic abstractions, and (iii) novel cross-modal associative retrieval pathways enabling modality-crossing queries. Unlike existing retrieval systems with rigid indexes, HippoMM dynamically forms integrated episodic representations through adaptive temporal segmentation and dual-process memory encoding. Evaluations on our challenging <b>HippoVlog benchmark</b> demonstrate that HippoMM significantly outperforms state-of-the-art approaches (78.2% vs. 64.2% accuracy) while providing substantially faster response times (20.4s vs. 112.5s). Our results demonstrate that translating hippocampal principles offers a promising pathway for robust and efficient long-form audiovisual AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <p>
+              HippoMM introduces a novel architecture inspired by the human hippocampus to handle long audiovisual events. The system consists of three main components:
+            </p>
+            <ol>
+              <li><strong>Pattern Separation and Completion:</strong> Specialized neural networks process continuous audiovisual streams, separating distinct events while maintaining temporal coherence.</li>
+              <li><strong>Memory Consolidation:</strong> A hierarchical memory system that transforms raw perceptual inputs into semantic representations through progressive abstraction.</li>
+              <li><strong>Cross-modal Retrieval:</strong> Novel attention mechanisms enable efficient querying across modalities while maintaining temporal context.</li>
+            </ol>
+            <p>
+              The architecture dynamically segments input streams using adaptive temporal windows and implements a dual-process encoding strategy that balances detailed recall with efficient retrieval.
+            </p>
+          </div>
+          <figure class="image">
+            <img src="./static/img/method.png" alt="Diagram illustrating the HippoMM architecture">
+            <figcaption>Fig 1: Overview of the HippoMM architecture showing the three main components and their interactions.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="benchmark">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">HippoVlog Benchmark Examples</h2>
+      
+      <div class="content has-text-justified mb-5">
+        <p>
+          The HippoVlog benchmark contains diverse question types across multiple modalities to evaluate comprehensive understanding of long-form audiovisual content. Below we present representative examples from each category in our evaluation framework.
+        </p>
+      </div>
+  
+      <!-- Examples Container -->
+      <div class="columns is-multiline">
+        
+        <!-- Audio-Visual Example -->
+        <div class="column is-12 mb-5">
+          <div class="box example-box" style="border-left: 5px solid #3273dc; box-shadow: 0 2px 5px rgba(10,10,10,0.1);">
+            <h4 class="title is-4 has-text-weight-bold" style="color: #3273dc; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">Category: Audio-Visual (A+V)</h4>
+            <div class="columns is-vcentered">
+              <div class="column is-5">
+                <div class="video-container">
+                  <iframe width="100%" height="280" src="https://www.youtube.com/embed/YF_uATQABhA?start=840" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p class="has-text-centered is-size-7 mt-2 has-text-grey">Example requires both audio and visual cues for understanding</p>
+              </div>
+              <div class="column is-7">
+                <div class="card">
+                  <div class="card-content">
+                    <h5 class="title is-5 mb-3" style="color: #363636;">Question & Answer</h5>
+                    <div class="qa-block">
+                      <p class="has-background-light p-3 is-size-6" style="border-radius: 4px;"><strong>Q:</strong> While the main character is holding the jar labeled 'Cotswold Lavender Soothing Muscle Rub' in the car, what does she mention about their Airbnb experiences?</p>
+                      <p class="mt-3 mb-2 is-size-6"><strong>A:</strong> <span style="color: #4a4a4a;">They occasionally encounter rough mattresses.</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Audio Example -->
+        <div class="column is-12 mb-5">
+          <div class="box example-box" style="border-left: 5px solid #ff3860; box-shadow: 0 2px 5px rgba(10,10,10,0.1);">
+            <h4 class="title is-4 has-text-weight-bold" style="color: #ff3860; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">Category: Audio (A)</h4>
+            <div class="columns is-vcentered">
+              <div class="column is-5">
+                <div class="video-container">
+                  <iframe width="100%" height="280" src="https://www.youtube.com/embed/BBtuiPPyQxY?start=184" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p class="has-text-centered is-size-7 mt-2 has-text-grey">Example primarily depends on audio cues for understanding</p>
+              </div>
+              <div class="column is-7">
+                <div class="card">
+                  <div class="card-content">
+                    <h5 class="title is-5 mb-3" style="color: #363636;">Question & Answer</h5>
+                    <div class="qa-block">
+                      <p class="has-background-light p-3 is-size-6" style="border-radius: 4px;"><strong>Q:</strong> What is the main character's reason for being excited in the conversation?</p>
+                      <p class="mt-3 mb-2 is-size-6"><strong>A:</strong> <span style="color: #4a4a4a;">The main character expresses excitement because it is their birthday, as they explicitly state, 'It's literally my birthday today, I'm so excited.'</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Visual Example -->
+        <div class="column is-12 mb-5">
+          <div class="box example-box" style="border-left: 5px solid #23d160; box-shadow: 0 2px 5px rgba(10,10,10,0.1);">
+            <h4 class="title is-4 has-text-weight-bold" style="color: #23d160; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">Category: Visual (V)</h4>
+            <div class="columns is-vcentered">
+              <div class="column is-5">
+                <div class="video-container">
+                  <iframe width="100%" height="280" src="https://www.youtube.com/embed/HLDPA3FTUJ4?start=432" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p class="has-text-centered is-size-7 mt-2 has-text-grey">Example primarily depends on visual cues for understanding</p>
+              </div>
+              <div class="column is-7">
+                <div class="card">
+                  <div class="card-content">
+                    <h5 class="title is-5 mb-3" style="color: #363636;">Question & Answer</h5>
+                    <div class="qa-block">
+                      <p class="has-background-light p-3 is-size-6" style="border-radius: 4px;"><strong>Q:</strong> What color is the main character's sweater?</p>
+                      <p class="mt-3 mb-2 is-size-6"><strong>A:</strong> <span style="color: #4a4a4a;">The main character is wearing a gray sweater in the provided scene.</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Summary Example -->
+        <div class="column is-12 mb-5">
+          <div class="box example-box" style="border-left: 5px solid #ffdd57; box-shadow: 0 2px 5px rgba(10,10,10,0.1);">
+            <h4 class="title is-4 has-text-weight-bold" style="color: #806c00; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">Category: Semantic Understanding (S)</h4>
+            <div class="columns is-vcentered">
+              <div class="column is-5">
+                <div class="video-container">
+                  <iframe width="100%" height="280" src="https://www.youtube.com/embed/Ei7hTKr8Ins" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p class="has-text-centered is-size-7 mt-2 has-text-grey">Example requires comprehensive semantic understanding</p>
+              </div>
+              <div class="column is-7">
+                <div class="card">
+                  <div class="card-content">
+                    <h5 class="title is-5 mb-3" style="color: #363636;">Question & Answer</h5>
+                    <div class="qa-block">
+                      <p class="has-background-light p-3 is-size-6" style="border-radius: 4px;"><strong>Q:</strong> What was the main character's sentiment about her trip to Vienna?</p>
+                      <p class="mt-3 mb-2 is-size-6"><strong>A:</strong> <span style="color: #4a4a4a;">She hoped her love for the city was conveyed.</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          We evaluate HippoMM on the newly introduced HippoVlog benchmark designed for long audiovisual event understanding. Our approach demonstrates significant improvements over state-of-the-art methods in both accuracy and inference speed.
+        </p>
+        
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <caption style="caption-side: top; font-weight: bold; margin-bottom: 15px; text-align: center; font-size: 1rem;">
+              Table 1: Performance comparison of HippoMM against existing methods and ablation variants.
+            </caption>
+            <thead style="background-color: #f5f5f5;">
+              <tr>
+                <th rowspan="2" style="text-align: left; vertical-align: middle; border: 1px solid #ddd; padding: 8px;">Method</th>
+                <th rowspan="2" style="text-align: center; vertical-align: middle; border: 1px solid #ddd; padding: 8px;">PT ↓<br><span style="font-size: 0.8em; font-weight: normal;">(hours)</span></th>
+                <th rowspan="2" style="text-align: center; vertical-align: middle; border: 1px solid #ddd; padding: 8px;">ART ↓<br><span style="font-size: 0.8em; font-weight: normal;">(seconds)</span></th>
+                <th colspan="4" style="text-align: center; border: 1px solid #ddd; padding: 8px; background-color: #e8e8e8;">Modality Performance</th>
+                <th rowspan="2" style="text-align: center; vertical-align: middle; border: 1px solid #ddd; padding: 8px;">Avg. Acc. ↑<br><span style="font-size: 0.8em; font-weight: normal;">(%)</span></th>
+              </tr>
+              <tr style="background-color: #e8e8e8;">
+                <th style="text-align: center; border: 1px solid #ddd; padding: 8px;">A+V ↑</th>
+                <th style="text-align: center; border: 1px solid #ddd; padding: 8px;">A ↑</th>
+                <th style="text-align: center; border: 1px solid #ddd; padding: 8px;">V ↑</th>
+                <th style="text-align: center; border: 1px solid #ddd; padding: 8px;">S ↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #f9f9f9;">
+                <td colspan="8" style="text-align: left; font-weight: bold; border: 1px solid #ddd; padding: 8px;">Prior Methods</td>
+              </tr>
+              <tr>
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px;">NotebookLM</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">--</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">--</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">28.40</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">23.20</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">28.00</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">26.80</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">26.60</td>
+              </tr>
+              <tr>
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px;">Video RAG</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">9.46</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">112.5</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">63.6</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">67.2</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">41.2</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">84.8</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">64.2</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                <td colspan="8" style="text-align: left; font-weight: bold; border: 1px solid #ddd; padding: 8px;">Ablation Studies</td>
+              </tr>
+              <tr>
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px;">HippoMM w/o DR, AR</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">5.09</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>4.14</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">66.8</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">73.2</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">60.4</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">90.0</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">72.6</td>
+              </tr>
+              <tr>
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px;">HippoMM w/o FR, AR</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">5.09</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">27.3</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>72.0</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">80.0</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>66.8</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">83.2</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">75.5</td>
+              </tr>
+              <tr>
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px;">HippoMM w/o AR</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">5.09</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>11.2</u></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">68.8</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>80.8</u></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>65.6</u></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>92.0</u></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>76.8</u></td>
+              </tr>
+              <tr style="background-color: #eaf4fb;">
+                <td style="text-align: left; border: 1px solid #ddd; padding: 8px; font-weight: bold;">HippoMM (Ours)</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>5.09</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;">20.4</td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><u>70.8</u></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>81.6</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>66.8</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>93.6</b></td>
+                <td style="text-align: center; border: 1px solid #ddd; padding: 8px;"><b>78.2</b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="content has-text-justified">
+          <p><b>Note:</b> PT: Processing Time; ART: Average Response Time; A+V: Cross-modal (Audio+Visual) accuracy; A: Audio-only accuracy; V: Visual-only accuracy; S: Semantic understanding accuracy. Best results are in <b>bold</b>, second best are <u>underlined</u>. HippoMM significantly outperforms prior methods in all modality-specific tasks while maintaining efficient processing and response times. Ablation studies demonstrate the importance of each component: Detailed Recall (DR), Fast Retrieval (FR), and Adaptive Reasoning (AR).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p class="is-size-7">
+              Template based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+    .qa-block {
+      margin-bottom: 0.5rem;
+    }
+    .qa-block p {
+      margin-bottom: 0.25rem;
+      line-height: 1.5;
+    }
+    .example-box {
+      transition: all 0.3s ease;
+    }
+    .example-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(10,10,10,0.1) !important;
+    }
+    .card {
+      box-shadow: none;
+      background-color: transparent;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+    .navbar-item {
+      font-weight: 500;
+    }
+    .navbar-item:hover {
+      color: #3273dc;
+    }
+    /* New styles for fixed navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    body {
+      padding-top: 3.25rem; /* Adjust this value based on your navbar height */
+    }
+    .hero {
+      margin-top: 3.25rem; /* Same as body padding-top */
+    }
+  </style>
+
+</body>
+</html>
